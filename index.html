@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung – Kompass</title>
+<style>
+  :root {
+    --grund: #ffffff;
+    --text: #1c1e21;
+    --leise: #5a6068;
+    --rand: #e2e5e9;
+    --kasten: #f5f6f8;
+    --akzent: #2f5d8c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --grund: #14161a;
+      --text: #e6e8ea;
+      --leise: #9aa1a9;
+      --rand: #2a2e34;
+      --kasten: #1c1f24;
+      --akzent: #8ab4e8;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 96px;
+    background: var(--grund);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 42rem; margin: 0 auto; }
+  h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 .35rem; font-weight: 600; }
+  .stand { color: var(--leise); font-size: .875rem; margin: 0 0 2.5rem; }
+  h2 {
+    font-size: 1.1rem; font-weight: 600; margin: 2.5rem 0 .75rem;
+    padding-top: 1.5rem; border-top: 1px solid var(--rand);
+  }
+  h2:first-of-type { border-top: 0; padding-top: 0; }
+  h3 { font-size: .975rem; font-weight: 600; margin: 1.5rem 0 .4rem; }
+  p { margin: 0 0 1rem; }
+  ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+  li { margin-bottom: .4rem; }
+  a { color: var(--akzent); }
+  .kasten {
+    background: var(--kasten);
+    border: 1px solid var(--rand);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin: 0 0 1rem;
+  }
+  .kasten p:last-child { margin-bottom: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 0 0 1rem; font-size: .925rem; }
+  th, td { text-align: left; padding: .55rem .75rem; border-bottom: 1px solid var(--rand); vertical-align: top; }
+  th { font-weight: 600; }
+  .huelle { overflow-x: auto; }
+  footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rand); color: var(--leise); font-size: .875rem; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Datenschutzerklärung</h1>
+<p class="stand">Für die Android-App <strong>Kompass</strong> · Stand: 6. September 2026</p>
+
+<h2>1. Verantwortlicher</h2>
+<div class="kasten">
+  <p>
+    Tim Holzgartner<br>
+    Würzburger Str. 61<br>
+    97204 Höchberg<br>
+    Deutschland
+  </p>
+  <p>E-Mail: <a href="mailto:nordwert.apps@gmail.com">nordwert.apps@gmail.com</a></p>
+</div>
+
+<h2>2. Das Wichtigste in Kürze</h2>
+<p>
+  Kompass ist eine reine Anzeige-App. Sie hat keine Benutzerkonten, keine Anmeldung, keine
+  Werbung und keine Analyse- oder Tracking-Werkzeuge. Es gibt keinen Server des Anbieters,
+  an den Daten gesendet werden, und es werden keine Daten an Dritte verkauft oder zu
+  Werbezwecken weitergegeben.
+</p>
+<p>
+  Ihr Standort wird ausschließlich dafür verwendet, die örtliche Abweichung zwischen
+  magnetischem und geografischem Norden zu berechnen. Diese Berechnung findet vollständig
+  auf Ihrem Gerät statt. Eine einzige Ausnahme – die Umwandlung Ihrer Koordinaten in einen
+  Ortsnamen – wird in Abschnitt 4 offen beschrieben.
+</p>
+
+<h2>3. Welche Daten verarbeitet die App?</h2>
+<div class="huelle">
+<table>
+  <tr>
+    <th>Daten</th>
+    <th>Wozu</th>
+    <th>Wohin</th>
+  </tr>
+  <tr>
+    <td>Ungefährer Standort (Koordinaten)</td>
+    <td>Berechnung der magnetischen Missweisung; Anzeige von Koordinaten und Ortsname</td>
+    <td>Bleibt auf dem Gerät – außer bei der Ortsnamen-Suche, siehe Abschnitt 4</td>
+  </tr>
+  <tr>
+    <td>Magnetfeld, Beschleunigung, Drehrate</td>
+    <td>Berechnung der Nordrichtung, der Neigung und der Kalibrierung</td>
+    <td>Nur im Arbeitsspeicher, wird nicht gespeichert und nicht übertragen</td>
+  </tr>
+  <tr>
+    <td>Kalibrierwerte und Einstellungen</td>
+    <td>Damit die Kalibrierung und Ihre Vorlieben beim nächsten Start erhalten bleiben</td>
+    <td>Ausschließlich im lokalen Speicher der App auf Ihrem Gerät</td>
+  </tr>
+</table>
+</div>
+<p>
+  Es werden keine Gerätekennungen, keine Werbe-ID, keine Kontaktdaten, keine Fotos und keine
+  Nutzungsstatistiken erhoben.
+</p>
+
+<h2>4. Standortdaten im Einzelnen</h2>
+
+<h3>Zweck und Rechtsgrundlage</h3>
+<p>
+  Ein Magnetkompass zeigt zum magnetischen Nordpol, nicht zum geografischen. Der Unterschied
+  beträgt je nach Ort mehrere Grad. Um ihn auszugleichen, muss die App wissen, wo Sie sich
+  ungefähr befinden. Die Abweichung wird anhand des World Magnetic Model 2025 berechnet, das
+  als Datentabelle in der App enthalten ist – dafür ist keine Internetverbindung nötig.
+</p>
+<p>
+  Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO.
+  Sie erteilen diese über die Standortabfrage Ihres Betriebssystems und können sie jederzeit
+  in den Systemeinstellungen widerrufen. Die App bleibt ohne Standortfreigabe voll
+  benutzbar; sie zeigt dann den magnetischen statt des geografischen Nordens.
+</p>
+<p>
+  Abgefragt wird nur die grobe Genauigkeitsstufe. Die Koordinaten werden nicht dauerhaft
+  gespeichert, sondern nur für die Dauer der Sitzung im Arbeitsspeicher gehalten.
+</p>
+
+<h3>Umwandlung in einen Ortsnamen</h3>
+<p>
+  Zur besseren Verständlichkeit zeigt die App zusätzlich den Namen Ihres Aufenthaltsorts an,
+  zum Beispiel den Ort und das Land. Diese Umwandlung von Koordinaten in einen Namen kann das
+  Gerät nicht selbst leisten. Die App nutzt dafür die Geocoding-Schnittstelle des
+  Betriebssystems. Dabei werden Ihre Koordinaten an den Dienst des jeweiligen
+  Systemanbieters übermittelt – unter Android an Google, unter iOS an Apple.
+</p>
+<p>
+  Diese Übermittlung erfolgt einmalig beim Ermitteln des Standorts. Der Anbieter dieser App
+  erhält dabei keine Daten. Welche Daten der Systemanbieter seinerseits verarbeitet, richtet
+  sich nach dessen eigenen Datenschutzbestimmungen:
+</p>
+<ul>
+  <li><a href="https://policies.google.com/privacy?hl=de">Datenschutzerklärung von Google</a></li>
+  <li><a href="https://www.apple.com/legal/privacy/de-ww/">Datenschutzerklärung von Apple</a></li>
+</ul>
+<p>
+  Schlägt die Suche fehl oder besteht keine Internetverbindung, entfällt lediglich die Zeile
+  mit dem Ortsnamen. Alle übrigen Funktionen des Kompasses bleiben unverändert.
+</p>
+
+<h3>Öffnen der Karten-App</h3>
+<p>
+  Tippen Sie in der App auf Ihren Standort, öffnet sich die auf Ihrem Gerät installierte
+  Karten-App mit diesen Koordinaten. Das geschieht ausschließlich auf Ihre ausdrückliche
+  Handlung hin. Ab diesem Moment gilt die Datenschutzerklärung der jeweiligen Karten-App.
+</p>
+
+<h2>5. Lokal gespeicherte Daten</h2>
+<p>
+  Die App speichert zwei Dinge dauerhaft im geschützten Speicherbereich der App auf Ihrem
+  Gerät:
+</p>
+<ul>
+  <li>die Ergebnisse der Kompass-Kalibrierung (drei Zahlenwerte zur Korrektur des Magnetfelds
+      sowie das Datum der Messung)</li>
+  <li>Ihre Einstellungen (Bezugsrichtung und Farbdesign)</li>
+</ul>
+<p>
+  Diese Daten enthalten keine personenbezogenen Angaben, verlassen das Gerät nicht und werden
+  mit der Deinstallation der App vollständig gelöscht. Die Kalibrierung lässt sich außerdem
+  jederzeit in der App selbst zurücksetzen.
+</p>
+
+<h2>6. Berechtigungen</h2>
+<div class="huelle">
+<table>
+  <tr>
+    <th>Berechtigung</th>
+    <th>Warum die App sie anfragt</th>
+  </tr>
+  <tr>
+    <td>Ungefährer Standort<br><span style="color:var(--leise)">ACCESS_COARSE_LOCATION</span></td>
+    <td>Berechnung der Missweisung, Anzeige von Ort und Koordinaten</td>
+  </tr>
+  <tr>
+    <td>Genauer Standort<br><span style="color:var(--leise)">ACCESS_FINE_LOCATION</span></td>
+    <td>Wird technisch mit angefragt; die App fordert tatsächlich nur die grobe
+        Genauigkeitsstufe an</td>
+  </tr>
+</table>
+</div>
+<p>
+  Auf Sensoren wie Magnetfeld, Beschleunigung und Drehrate greift die App ohne gesonderte
+  Berechtigung zu, weil das Betriebssystem hierfür keine verlangt. Eine Internetberechtigung
+  wird nur für die in Abschnitt 4 beschriebene Ortsnamen-Suche wirksam.
+</p>
+
+<h2>7. Empfänger und Weitergabe</h2>
+<p>
+  Über die in Abschnitt 4 beschriebene Geocoding-Schnittstelle des Betriebssystems hinaus
+  werden keine Daten an Dritte weitergegeben. Es gibt keine Auftragsverarbeiter, keine
+  Werbenetzwerke und keine Analysedienste.
+</p>
+<p>
+  Der Vertrieb der App erfolgt über Google Play. Google erhebt im Rahmen des Store-Betriebs
+  eigene Daten, etwa zum Herunterladen und Aktualisieren der App. Darauf hat der Anbieter
+  dieser App keinen Einfluss; es gilt die Datenschutzerklärung von Google.
+</p>
+
+<h2>8. Speicherdauer</h2>
+<p>
+  Standort- und Sensordaten werden nur während der Nutzung im Arbeitsspeicher gehalten und
+  beim Beenden der App verworfen. Kalibrierung und Einstellungen bleiben bis zum Zurücksetzen
+  oder bis zur Deinstallation der App gespeichert.
+</p>
+
+<h2>9. Ihre Rechte</h2>
+<p>
+  Ihnen stehen nach der DSGVO die Rechte auf Auskunft (Art. 15), Berichtigung (Art. 16),
+  Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit
+  (Art. 20) und Widerspruch (Art. 21) zu. Eine erteilte Einwilligung können Sie jederzeit
+  mit Wirkung für die Zukunft widerrufen.
+</p>
+<p>
+  Da diese App keine Daten an den Anbieter überträgt und keine Nutzerkonten führt, liegen
+  hier keine personenbezogenen Daten über Sie vor, die Gegenstand einer Auskunft sein
+  könnten. Sämtliche von der App gespeicherten Daten löschen Sie selbst, indem Sie die
+  Kalibrierung zurücksetzen oder die App deinstallieren.
+</p>
+<p>
+  Sie haben außerdem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
+</p>
+
+<h2>10. Kinder</h2>
+<p>
+  Die App richtet sich nicht gezielt an Kinder und erhebt wissentlich keine Daten von
+  Kindern.
+</p>
+
+<h2>11. Änderungen dieser Erklärung</h2>
+<p>
+  Diese Erklärung wird angepasst, wenn sich die App ändert. Maßgeblich ist die jeweils unter
+  dieser Adresse veröffentlichte Fassung. Das Datum der letzten Änderung steht oben.
+</p>
+
+<footer>
+  Kompass · Version 0.9.0 · Kontakt:
+  <a href="mailto:nordwert.apps@gmail.com">nordwert.apps@gmail.com</a>
+</footer>
+
+</main>
+</body>
+</html>
