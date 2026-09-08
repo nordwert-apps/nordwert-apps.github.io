@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kompass – Testerinnen und Tester gesucht</title>
+<meta name="description" content="Hilf mit, eine Kompass-App für Android zu testen. Zwei Klicks, 14 Tage, kein Aufwand.">
+<meta name="theme-color" content="#f5f6f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+<style>
+  :root {
+    --grund: #ffffff;
+    --flaeche: #f5f6f0;
+    --flaeche2: #eef0ea;
+    --text: #1c1e21;
+    --leise: #5a6068;
+    --schwach: #868d95;
+    --rand: #e2e5e9;
+    --blau: #215cac;
+    --blau-text: #1b4d90;
+    --gruen: #2a9c38;
+    --schatten: 0 1px 2px rgba(20,25,35,.06), 0 8px 24px rgba(20,25,35,.07);
+    --seite: 20px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --grund: #14161a;
+      --flaeche: #1c1f24;
+      --flaeche2: #22262c;
+      --text: #e6e8ea;
+      --leise: #9aa1a9;
+      --schwach: #798088;
+      --rand: #2a2e34;
+      --blau: #3f7fd0;
+      --blau-text: #8ab4e8;
+      --gruen: #4ec95e;
+      --schatten: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--grund);
+    color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+  main { max-width: 44rem; margin: 0 auto; }
+  .spalte { padding-left: var(--seite); padding-right: var(--seite); }
+
+  p { margin: 0 0 1rem; }
+  strong { font-weight: 600; }
+  a { color: var(--blau-text); }
+
+  /* ---------- Kopf ---------- */
+  .kopf {
+    background: var(--flaeche);
+    text-align: center;
+    padding: 40px var(--seite) 34px;
+    border-bottom: 1px solid var(--rand);
+  }
+  .kopf img {
+    width: 84px; height: 84px;
+    border-radius: 20px;
+    display: block; margin: 0 auto 16px;
+    box-shadow: var(--schatten);
+  }
+  h1 {
+    font-size: clamp(1.75rem, 7vw, 2.1rem);
+    line-height: 1.15; margin: 0 0 .4rem;
+    font-weight: 650; letter-spacing: -.02em;
+  }
+  .unterzeile { color: var(--leise); font-size: 1rem; margin: 0; }
+
+  /* ---------- Aufruf ---------- */
+  .aufruf { padding-top: 30px; }
+  .aufruf h2 { margin-top: 0; }
+
+  h2 {
+    font-size: clamp(1.15rem, 4.6vw, 1.3rem);
+    font-weight: 650; margin: 38px 0 .7rem;
+    letter-spacing: -.01em;
+  }
+  h3 { font-size: 1rem; font-weight: 650; margin: 0 0 .2rem; }
+
+  /* ---------- Galerie ---------- */
+  .galerie {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 6px var(--seite) 14px;
+    margin: 0;
+  }
+  .galerie::-webkit-scrollbar { display: none; }
+  .galerie figure {
+    margin: 0;
+    flex: 0 0 62vw;
+    max-width: 220px;
+    scroll-snap-align: center;
+  }
+  .galerie img {
+    width: 100%; display: block;
+    border-radius: 16px;
+    border: 1px solid var(--rand);
+    background: var(--flaeche);
+    box-shadow: var(--schatten);
+  }
+  .galerie figcaption {
+    font-size: .82rem; color: var(--schwach);
+    margin-top: 10px; text-align: center;
+  }
+  .wisch {
+    font-size: .8rem; color: var(--schwach);
+    text-align: center; margin: 0 0 4px;
+  }
+
+  /* ---------- Merkmale ---------- */
+  .merkmale { list-style: none; padding: 0; margin: 0; }
+  .merkmale li {
+    background: var(--flaeche);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 10px;
+  }
+  .merkmale p { margin: 0; color: var(--leise); font-size: .95rem; }
+
+  /* ---------- Schritte ---------- */
+  ol.schritte { list-style: none; counter-reset: s; padding: 0; margin: 0 0 24px; }
+  ol.schritte li {
+    counter-increment: s; position: relative;
+    padding: 0 0 20px 46px;
+  }
+  ol.schritte li::before {
+    content: counter(s);
+    position: absolute; left: 0; top: 0;
+    width: 31px; height: 31px; border-radius: 50%;
+    background: var(--blau); color: #fff;
+    font-size: .9rem; font-weight: 650;
+    display: flex; align-items: center; justify-content: center;
+  }
+  ol.schritte p { margin: .15rem 0 0; color: var(--leise); font-size: .95rem; }
+
+  /* ---------- Pillen im Kopf ---------- */
+  .pillen {
+    list-style: none; display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 7px; padding: 0; margin: 18px 0 0;
+  }
+  .pillen li {
+    background: var(--grund); border: 1px solid var(--rand);
+    color: var(--leise); font-size: .8rem; font-weight: 500;
+    padding: 5px 11px; border-radius: 999px;
+  }
+
+  /* ---------- Auf einen Blick ---------- */
+  .blick {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 10px; margin: 4px 0 8px;
+  }
+  .blick div {
+    background: var(--flaeche); border-radius: 14px;
+    padding: 14px 8px; text-align: center;
+  }
+  .blick b {
+    display: block; font-size: 1.6rem; font-weight: 650;
+    color: var(--blau-text); line-height: 1.1; letter-spacing: -.02em;
+  }
+  .blick span { display: block; font-size: .78rem; color: var(--schwach); margin-top: 3px; }
+
+  /* ---------- Knöpfe ---------- */
+  .knoepfe { display: flex; flex-direction: column; gap: 11px; margin: 0 0 10px; }
+  .knopf {
+    display: block; text-align: center; text-decoration: none;
+    padding: 17px 22px; border-radius: 13px;
+    font-weight: 650; font-size: 1.03rem;
+    border: 1.5px solid transparent;
+  }
+  .knopf-voll { background: var(--blau); color: #fff; box-shadow: var(--schatten); }
+  .knopf-leer { background: var(--grund); color: var(--blau-text); border-color: var(--rand); }
+  .knopf:active { transform: scale(.985); filter: brightness(.95); }
+  .leiste a:active { transform: scale(.985); filter: brightness(.95); }
+  .knopf-hinweis { font-size: .85rem; color: var(--schwach); text-align: center; margin: 0; }
+
+  /* ---------- Hinweise ---------- */
+  .hinweis {
+    background: var(--flaeche2);
+    border-radius: 13px;
+    padding: 14px 17px;
+    margin: 0 0 10px;
+    color: var(--leise); font-size: .95rem;
+  }
+  .hinweis strong { color: var(--text); }
+
+  /* ---------- Fuß ---------- */
+  footer {
+    margin-top: 44px; padding: 22px var(--seite) 8px;
+    border-top: 1px solid var(--rand);
+    color: var(--schwach); font-size: .875rem; text-align: center;
+  }
+
+  /* ---------- Feste Leiste unten ---------- */
+  .leiste {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    background: color-mix(in srgb, var(--grund) 88%, transparent);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--rand);
+    padding: 12px var(--seite) calc(12px + env(safe-area-inset-bottom));
+    z-index: 10;
+  }
+  .leiste a {
+    display: block; max-width: 24rem; margin: 0 auto;
+    text-align: center; text-decoration: none;
+    background: var(--blau); color: #fff;
+    font-weight: 650; font-size: 1.03rem;
+    padding: 16px 20px; border-radius: 13px;
+  }
+
+  @media (min-width: 640px) {
+    :root { --seite: 28px; }
+    body { padding-bottom: 40px; }
+    .leiste { display: none; }
+    .galerie figure { flex-basis: 200px; }
+    .knoepfe { flex-direction: row; }
+    .knopf { flex: 1; }
+    .kopf { padding-top: 56px; padding-bottom: 44px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <div class="kopf">
+    <img src="icon.png" alt="Symbol der Kompass-App">
+    <h1>Kompass</h1>
+    <p class="unterzeile">Ein ehrlicher Kompass für Android.</p>
+    <ul class="pillen">
+      <li>Kostenlos</li>
+      <li>Werbefrei</li>
+      <li>Offline</li>
+    </ul>
+  </div>
+
+  <div class="spalte aufruf">
+    <h2>Ich suche zwölf Testpersonen</h2>
+    <p>
+      Ich habe diese App selbst entwickelt. Bevor Google sie im Play Store veröffentlicht,
+      verlangt sie einen zweiwöchigen Test mit mindestens zwölf Personen.
+    </p>
+    <p>
+      <strong>Dein Aufwand: zwei Klicks und dann nichts mehr.</strong> Du installierst die App und
+      lässt sie 14 Tage auf dem Handy. Benutzen musst du sie nicht.
+    </p>
+
+    <div class="blick">
+      <div><b>2</b><span>Klicks</span></div>
+      <div><b>14</b><span>Tage dabei</span></div>
+      <div><b>0</b><span>Aufwand</span></div>
+    </div>
+  </div>
+
+  <div class="spalte"><h2>So sieht sie aus</h2></div>
+  <div class="galerie">
+    <figure>
+      <img src="bild-1.png" alt="Die Hauptansicht mit der Kompassskala">
+      <figcaption>Hauptansicht</figcaption>
+    </figure>
+    <figure>
+      <img src="bild-2.png" alt="Die App im dunklen Design">
+      <figcaption>Dunkles Design</figcaption>
+    </figure>
+    <figure>
+      <img src="bild-3.png" alt="Die Erklärung zur geführten Kalibrierung">
+      <figcaption>Geführte Kalibrierung</figcaption>
+    </figure>
+    <figure>
+      <img src="bild-4.png" alt="Die Zustandstafel mit Messwerten im Klartext">
+      <figcaption>Zustand im Klartext</figcaption>
+    </figure>
+  </div>
+  <p class="wisch">seitlich wischen</p>
+
+  <div class="spalte">
+    <h2>Was sie besser macht</h2>
+    <ul class="merkmale">
+      <li>
+        <h3>Sie sagt, wie verlässlich sie ist</h3>
+        <p>Ob das Magnetfeld gestört ist oder du das Telefon schief hältst – in ganzen Sätzen statt in Messwerten.</p>
+      </li>
+      <li>
+        <h3>Sie stimmt auch schräg</h3>
+        <p>Der Kurs wird über die Lage des Geräts ausgeglichen. Eine Libelle zeigt dir, wie gerade du hältst.</p>
+      </li>
+      <li>
+        <h3>Echter statt magnetischer Norden</h3>
+        <p>Die örtliche Abweichung wird aus dem Standort berechnet – offline, mit dem Weltmagnetmodell 2025.</p>
+      </li>
+      <li>
+        <h3>Peilung nehmen</h3>
+        <p>Richtung merken, und die App führt dich zurück: „34° nach rechts“.</p>
+      </li>
+    </ul>
+
+    <h2 id="mitmachen">So machst du mit</h2>
+    <ol class="schritte">
+      <li>
+        <h3>Der Testgruppe beitreten</h3>
+        <p>Ein Klick auf den ersten Knopf, dann auf „Gruppe beitreten“.</p>
+      </li>
+      <li>
+        <h3>Dem Test zustimmen</h3>
+        <p>Zweiter Knopf, dort auf „Tester werden“. Erst danach zählst du mit.</p>
+      </li>
+      <li>
+        <h3>Installieren und liegen lassen</h3>
+        <p>Du bekommst einen Link zum Play Store. Danach 14 Tage einfach drauf lassen.</p>
+      </li>
+    </ol>
+
+    <div class="knoepfe">
+      <a class="knopf knopf-voll" href="https://groups.google.com/g/app-test_kompass">1 · Gruppe beitreten</a>
+      <a class="knopf knopf-leer" href="https://play.google.com/apps/testing/de.nordwert.kompass">2 · Tester werden</a>
+    </div>
+    <p class="knopf-hinweis">Beide Schritte sind nötig – der erste allein reicht nicht.</p>
+
+    <h2>Wichtig zu wissen</h2>
+
+    <p class="hinweis">
+      <strong>Nur Android.</strong> Mit einem iPhone kannst du leider nicht mitmachen.
+    </p>
+
+    <p class="hinweis">
+      <strong>Überall dasselbe Google-Konto.</strong> Der Gruppenbeitritt, die Zustimmung und der Play Store
+      auf deinem Handy müssen unter demselben Konto laufen. Sonst taucht die App einfach nicht auf –
+      ohne jede Fehlermeldung. Das ist mit Abstand der häufigste Grund, warum es nicht klappt.
+    </p>
+
+    <p class="hinweis">
+      <strong>Bitte nicht vorzeitig deinstallieren.</strong> Google zählt nur Personen, die 14 Tage
+      ununterbrochen dabei sind. Steigt jemand aus, beginnt die Zählung für alle von vorne.
+    </p>
+
+    <p class="hinweis">
+      <strong>Etwas Geduld am Anfang.</strong> Zwischen Beitritt und Freischaltung können ein paar
+      Stunden liegen. Wenn es nicht sofort geht, probier es später noch einmal.
+    </p>
+
+    <h2>Und was ist mit meinen Daten?</h2>
+    <p>
+      Die App hat kein Nutzerkonto, keine Werbung und keine Analysewerkzeuge. Deinen Standort verwendet
+      sie nur, um die Abweichung zwischen magnetischem und geografischem Norden zu berechnen – diese
+      Rechnung läuft auf deinem Gerät. Alles Weitere steht offen in der
+      <a href="https://nordwert-apps.github.io/">Datenschutzerklärung</a>.
+    </p>
+  </div>
+
+  <footer>
+    <p>
+      Vielen Dank fürs Mitmachen.<br>
+      Fragen? <a href="mailto:nordwert.apps@gmail.com">nordwert.apps@gmail.com</a>
+    </p>
+    <p><a href="https://nordwert-apps.github.io/">Datenschutzerklärung</a></p>
+  </footer>
+
+</main>
+
+<div class="leiste">
+  <a href="#mitmachen">Ich mache mit</a>
+</div>
+
+</body>
+</html>
